@@ -2,6 +2,9 @@
 # Conditional build:
 %bcond_without	psyco		# build without python-psyco
 #
+%ifnarch %{ix86}
+%undefine	with_psyco
+%endif
 Summary:	Space game with gravity
 Summary(pl):	Kosmiczna gra z grawitacj±
 Name:		pyspacewar
@@ -13,9 +16,10 @@ Source0:	http://mg.pov.lt/pyspacewar/%{name}-%{version}.tar.gz
 # Source0-md5:	e7e738bc28cb9609041cb65f731e67b2
 Source1:	%{name}.desktop
 URL:		http://mg.pov.lt/pyspacewar/
-BuildRequires:	python-devel >= 2.3
+BuildRequires:	python-devel >= 1:2.3
 %{?with_psyco:BuildRequires:	python-psyco}
 BuildRequires:	python-pygame-devel >= 1.6
+BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,6 +55,8 @@ python setup.py install \
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install src/pyspacewar/images/%{name}-32x32.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
