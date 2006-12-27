@@ -8,12 +8,12 @@
 Summary:	Space game with gravity
 Summary(pl):	Kosmiczna gra z grawitacj±
 Name:		pyspacewar
-Version:	0.9.2
+Version:	0.9.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://mg.pov.lt/pyspacewar/%{name}-%{version}.tar.gz
-# Source0-md5:	e7e738bc28cb9609041cb65f731e67b2
+# Source0-md5:	d9515eb2584efd9fa43f6fa49b9761b2
 Source1:	%{name}.desktop
 URL:		http://mg.pov.lt/pyspacewar/
 BuildRequires:	python-devel >= 1:2.3
