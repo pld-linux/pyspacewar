@@ -16,7 +16,7 @@ Source0:	http://mg.pov.lt/pyspacewar/%{name}-%{version}.tar.gz
 # Source0-md5:	d9515eb2584efd9fa43f6fa49b9761b2
 Source1:	%{name}.desktop
 URL:		http://mg.pov.lt/pyspacewar/
-BuildRequires:	python-devel >= 1:2.3
+BuildRequires:	python-devel >= 1:2.4
 %{?with_psyco:BuildRequires:	python-psyco}
 BuildRequires:	python-pygame-devel >= 1.6
 BuildRequires:	rpm-pythonprov
