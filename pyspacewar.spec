@@ -6,7 +6,7 @@
 %undefine	with_psyco
 %endif
 Summary:	Space game with gravity
-Summary(pl):	Kosmiczna gra z grawitacj±
+Summary(pl.UTF-8):   Kosmiczna gra z grawitacjÄ…
 Name:		pyspacewar
 Version:	0.9.3
 Release:	1
@@ -29,12 +29,12 @@ Star Control (I and II).
 Two ships duel in a gravity field. Gravity doesn't affect the ships
 themselves, but it affects missiles launched by the ships.
 
-%description -l pl
-PySpaceWar jest gr± zainspirowan± przez Spacewar, Gravity Wars i
-czê¶ciowo równie¿ przez Star Control (I i II).
+%description -l pl.UTF-8
+PySpaceWar jest grÄ… zainspirowanÄ… przez Spacewar, Gravity Wars i
+czÄ™Å›ciowo rÃ³wnieÅ¼ przez Star Control (I i II).
 
-Dwa statki walcz± w polu grawitacyjnym. Grawitacja nie wp³ywa na
-statki, ale wp³ywa na pociski wystrzelone przez nie.
+Dwa statki walczÄ… w polu grawitacyjnym. Grawitacja nie wpÅ‚ywa na
+statki, ale wpÅ‚ywa na pociski wystrzelone przez nie.
 
 %prep
 %setup -q
