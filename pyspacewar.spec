@@ -6,7 +6,7 @@
 %undefine	with_psyco
 %endif
 Summary:	Space game with gravity
-Summary(pl.UTF-8):   Kosmiczna gra z grawitacją
+Summary(pl.UTF-8):	Kosmiczna gra z grawitacją
 Name:		pyspacewar
 Version:	0.9.3
 Release:	1
