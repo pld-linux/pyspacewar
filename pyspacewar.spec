@@ -48,10 +48,7 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__python} setup.py install \
 	--optimize=2 \
-	--root=$RPM_BUILD_ROOT \
-	--install-data=%{_datadir} \
-	--install-lib=%{py_sitescriptdir} \
-	--install-scripts=%{_bindir}
+	--root=$RPM_BUILD_ROOT 
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install src/pyspacewar/images/%{name}-32x32.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
