@@ -2,10 +2,9 @@
 Name=PySpaceWar
 Comment=Space game with gravity
 Comment[pl]=Kosmiczna gra z grawitacją
-Icon=pyspacewar.png
+Icon=pyspacewar
 Exec=pyspacewar
 Terminal=false
 Type=Application
 Categories=Game;ArcadeGame;
-Encoding=UTF-8
 # vi: encoding=utf-8
