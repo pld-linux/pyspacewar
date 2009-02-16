@@ -16,10 +16,11 @@ Source0:	http://mg.pov.lt/pyspacewar/%{name}-%{version}.tar.gz
 # Source0-md5:	d9515eb2584efd9fa43f6fa49b9761b2
 Source1:	%{name}.desktop
 URL:		http://mg.pov.lt/pyspacewar/
-BuildRequires:	python-devel >= 1:2.4
-%{?with_psyco:BuildRequires:	python-psyco}
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-pygame-devel >= 1.6
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
+%{?with_psyco:Requires:	python-psyco}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,7 +49,7 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__python} setup.py install \
 	--optimize=2 \
-	--root=$RPM_BUILD_ROOT 
+	--root=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install src/pyspacewar/images/%{name}-32x32.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
@@ -64,4 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
-%{py_sitescriptdir}/*
+%{py_sitescriptdir}/%{name}/*.py[co]
+%{py_sitescriptdir}/%{name}/images/*
+%{py_sitescriptdir}/*.egg-info
