@@ -8,12 +8,12 @@
 Summary:	Space game with gravity
 Summary(pl.UTF-8):	Kosmiczna gra z grawitacją
 Name:		pyspacewar
-Version:	0.9.3
+Version:	0.9.5
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://mg.pov.lt/pyspacewar/%{name}-%{version}.tar.gz
-# Source0-md5:	d9515eb2584efd9fa43f6fa49b9761b2
+# Source0-md5:	940de69ae0198dd053626ece20cbaeff
 Source1:	%{name}.desktop
 URL:		http://mg.pov.lt/pyspacewar/
 BuildRequires:	python-devel >= 1:2.5
@@ -45,14 +45,17 @@ statki, ale wpływa na pociski wystrzelone przez nie.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir},%{py_sitescriptdir}/%{name}/icons}
 
 %{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install src/pyspacewar/images/%{name}-32x32.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+install src/pyspacewar/icons/pyspacewar32.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+
+# needed by splash screen
+install src/pyspacewar/icons/pyspacewar48.png $RPM_BUILD_ROOT%{py_sitescriptdir}/%{name}/icons
 
 %py_postclean
 
@@ -65,6 +68,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
+%dir %{py_sitescriptdir}/%{name}
 %{py_sitescriptdir}/%{name}/*.py[co]
+%{py_sitescriptdir}/%{name}/icons/*
+%dir %{py_sitescriptdir}/%{name}/images
 %{py_sitescriptdir}/%{name}/images/*
+%dir %{py_sitescriptdir}/%{name}/music
+%{py_sitescriptdir}/%{name}/music/*
+%dir %{py_sitescriptdir}/%{name}/sounds
+%{py_sitescriptdir}/%{name}/sounds/*
 %{py_sitescriptdir}/*.egg-info
