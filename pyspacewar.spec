@@ -8,12 +8,12 @@
 Summary:	Space game with gravity
 Summary(pl.UTF-8):	Kosmiczna gra z grawitacją
 Name:		pyspacewar
-Version:	0.9.5
+Version:	0.9.7
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://mg.pov.lt/pyspacewar/%{name}-%{version}.tar.gz
-# Source0-md5:	940de69ae0198dd053626ece20cbaeff
+# Source0-md5:	164128ba8a84415748ce4fbc3c2c5647
 Source1:	%{name}.desktop
 URL:		http://mg.pov.lt/pyspacewar/
 BuildRequires:	python-devel >= 1:2.5
@@ -21,6 +21,7 @@ BuildRequires:	python-pygame-devel >= 1.6
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %{?with_psyco:Requires:	python-psyco}
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -70,11 +71,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/%{name}.png
 %dir %{py_sitescriptdir}/%{name}
 %{py_sitescriptdir}/%{name}/*.py[co]
-%{py_sitescriptdir}/%{name}/icons/*
+%dir %{py_sitescriptdir}/%{name}/icons
+%{py_sitescriptdir}/%{name}/icons
 %dir %{py_sitescriptdir}/%{name}/images
-%{py_sitescriptdir}/%{name}/images/*
+%{py_sitescriptdir}/%{name}/images
 %dir %{py_sitescriptdir}/%{name}/music
-%{py_sitescriptdir}/%{name}/music/*
+%{py_sitescriptdir}/%{name}/music
 %dir %{py_sitescriptdir}/%{name}/sounds
-%{py_sitescriptdir}/%{name}/sounds/*
+%{py_sitescriptdir}/%{name}/sounds
 %{py_sitescriptdir}/*.egg-info
