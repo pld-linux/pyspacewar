@@ -16,7 +16,7 @@ Source0:	http://mg.pov.lt/pyspacewar/%{name}-%{version}.tar.gz
 # Source0-md5:	164128ba8a84415748ce4fbc3c2c5647
 Source1:	%{name}.desktop
 URL:		http://mg.pov.lt/pyspacewar/
-BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-devel
 BuildRequires:	python-pygame-devel >= 1.6
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -79,4 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/%{name}/music
 %dir %{py_sitescriptdir}/%{name}/sounds
 %{py_sitescriptdir}/%{name}/sounds
+%if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/*.egg-info
+%endif
